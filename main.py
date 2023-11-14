@@ -7,6 +7,11 @@ price = 10
 name = input(str("Shop-owner: Hey! What is your name?\n"))
 #takes the input as the name variable
 
+if name == "No":
+    print("LOL. Get out yo!!")
+    exit()
+#if the user enter "No" as a value program will be ended if not program will be continue
+
 print("Shop-owner: Nice to meet ya " + name + " How can I help you?\n")
 #print the name variable
 
