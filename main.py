@@ -6,11 +6,12 @@ chocolate = .10
 
 name = input(str("Shop-owner: Hey! What is your name?\n"))
 #takes the input as the name variable
+isStupid = input(str("are you stupid?\n"))
 
-if name == "No":
+if name == "No" and isStupid == "Yes":
     print("LOL. Get out yo!!")
     exit()
-#if the user enter "No" as a value program will be ended if not program will be continue
+#if the user enter "No" as a value and isStupid value as a Yes, the program will be ended if not program will be continue
 
 print("Shop-owner: Nice to meet ya " + name + " How can I help you?\n")
 #print the name variable
