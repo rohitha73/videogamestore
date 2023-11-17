@@ -48,6 +48,7 @@ else:
 print("Shop-owner: Sure " + name + " Give me a second, I'll get you " + theGame)
 
 print("-------------------------------------------")
+print("-------------------------------------------")
 
 quantity = input("Shop-owner: Hey " + name + " i have got your " + theGame + " How many copies do you need bro?\n")
 #asking the quantity and storing the value
