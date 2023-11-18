@@ -1,4 +1,7 @@
-gameList = "delta force 3$\ncall of duty 3.50$\nangry birds 4$\nclash of clans 1.99$\nNFS 4.55$"
+import random
+
+
+gameList = ["delta force 3$" , "call of duty 3.50$" , "angry birds 4$" , "clash of clans 1.99$" , "NFS 4.55$"]
 #in the video game store
 price = 0
 budget = 15
@@ -6,9 +9,10 @@ chocolate = .10
 
 name = input(str("Shop-owner: Hey! What is your name?\n"))
 #takes the input as the name variable
+
 isStupid = input(str("are you stupid?\n"))
 
-if name == "No" and isStupid == "Yes":
+if name == "no" and isStupid == "yes":
     print("LOL. Get out yo!!")
     exit()
 #if the user enter "No" as a value and isStupid value as a Yes, the program will be ended if not program will be continue
@@ -18,7 +22,7 @@ print("Shop-owner: Nice to meet ya " + name + " How can I help you?\n")
 
 print("You: I want to buy some video games\n")
 
-print("Shop-owner: Okay, here's our video games " + gameList)
+print("Shop-owner: Okay, here's our video games " + str(gameList))
 
 theGame = input(str("Shop-owner: Which one do you need?\n"))
 #asking which game & storing the value
@@ -76,4 +80,52 @@ if budget > total:
     #budget variable is less than total but not enough for the chocolate variable value
 else:
     print("Shop-owner: Sorry " + name + " your money is not enough for the " + theGame )
-#budget variable value is not enough for the total
+    #budget variable value is not enough for the total
+    isGambling = str(input("Shop-owner: Hey! i have an idea, do you want to earn money by gambling?\n" ))
+    if isGambling == "yes":
+        print("Shop-owner: great!! follow me")
+        print("----------------------------------------------")
+        print("----------------------------------------------")
+        print("Shop-owner: let's gamble! we should do the guessing game. would you like it?")
+        print("You: i don't mind it")
+
+        rounds = int(input("Shop-owner: How many rounds do you want to play?"))
+
+        for i in range(rounds):
+            
+            print("Shop-owner: This is the guessing game!!! \n you have to guess the number i have")
+            print("You: great, i'll guess now.....\n")
+
+            guess = (random.randint(0,9))
+            #randomly generating a number within 0-100
+            answer = int(input())
+            #the answer will be storing in a answer variable
+            if answer == guess:
+                print("Shop-owner: alright you guessed it")
+            else:
+                print("Shop-owner: Bad luck yo.")
+
+            print("Shop-owner: want to quit?\n")
+
+            quit = str(input())
+            if quit == "yes":
+                exit()
+        
+
+
+
+
+        
+
+        
+
+
+        
+
+
+
+
+
+
+
+
