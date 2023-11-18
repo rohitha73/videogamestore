@@ -5,19 +5,23 @@ gameList = ["delta force 3$" , "call of duty 3.50$" , "angry birds 4$" , "clash 
 #in the video game store
 price = 0
 budget = 15
-chocolate = .10
+chocolate = (random.randint(1,3))
 
 name = input(str("Shop-owner: Hey! What is your name?\n"))
 #takes the input as the name variable
 
 isStupid = input(str("are you stupid?\n"))
 
-if name == "no" and isStupid == "yes":
+isGolden = str(input("Hey! " + name + " are you a our golden member?\n"))
+
+if name == "no" or isStupid == "yes":
     print("LOL. Get out yo!!")
     exit()
 #if the user enter "No" as a value and isStupid value as a Yes, the program will be ended if not program will be continue
+elif isStupid == "no" and isGolden == "yes":
+    print("Shop-owner: Please request any video game you like, we'll find it from anywhere today " + name)
 
-print("Shop-owner: Nice to meet ya " + name + " How can I help you?\n")
+print("Shop-owner: " + name + " How can I help you?\n")
 #print the name variable
 
 print("You: I want to buy some video games\n")
@@ -43,9 +47,17 @@ elif theGame == "NFS":
     price = 4.55
     print("Shop-owner: It is 4.55$ for one")
 else:
-    print("Shop-owner: Sorry, we don't have it here " + name)
-    print("okay then bye bye")
-    exit()
+    if isGolden == "no":
+        print("Shop-owner: Sorry, we don't have it here " + name)
+        print("okay then bye bye")
+        exit()
+    elif isGolden == "yes":
+        #adding the requesting video game to the game list because of the user is a golden member
+        gameList.append(theGame)
+        print("Shop-owner: here it's our new list!!" + str(gameList))
+        price = (random.randint(1,5))
+        print("Shop-owner: It is " + str(price) + " for one")
+
 #user must select one of these choices & the prices will be changed according to the user's choice
 
 
@@ -70,7 +82,7 @@ print("You: here's the money")
 
 if budget > total:
     print("You: can i have 1 chocolate as well")
-    print("Shop-owner: Sure, that'll be .10$. your total is " + str(newTotal))
+    print("Shop-owner: Sure, that'll be " + str(chocolate) + "$. your total is " + str(newTotal) + "$")
     #budget variable must be less than total
     if budget >= newTotal:
         print("You: Yes! great. Thank you")
@@ -110,22 +122,3 @@ else:
             quit = str(input())
             if quit == "yes":
                 exit()
-        
-
-
-
-
-        
-
-        
-
-
-        
-
-
-
-
-
-
-
-
