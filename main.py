@@ -1,7 +1,7 @@
 import random
 
 
-gameList = ["delta force 3$" , "call of duty 3.50$" , "angry birds 4$" , "clash of clans 1.99$" , "NFS 4.55$"]
+gameList = ["delta force" , "call of duty" , "angry birds" , "clash of clans" , "NFS"]
 #in the video game store
 price = 0
 budget = 15
@@ -31,7 +31,7 @@ print("Shop-owner: Okay, here's our video games " + str(gameList))
 theGame = input(str("Shop-owner: Which one do you need?\n"))
 #asking which game & storing the value
 
-if theGame == "Shop-owner: delta force":
+if theGame == "delta force":
     price = 3
     print("It is 3$ for one")
 elif theGame == "call of duty":
@@ -60,11 +60,68 @@ else:
 
 #user must select one of these choices & the prices will be changed according to the user's choice
 
-
 print("Shop-owner: Sure " + name + " Give me a second, I'll get you " + theGame)
 
 print("-------------------------------------------")
 print("-------------------------------------------")
+print("meanwhile in the back of the video game-store")
+
+print("Shop-owner: Yo, nick. there is a customer. you should get my new video games as soon as possible")
+print("Nick: I am working on it.")
+
+for x in range(2):
+    if isGolden == "no":
+        out_of_stock = (random.choice(gameList))
+        #generating random value from the list
+        print("Nick: Hey! " + out_of_stock + " gonna be out of stock ASAP!")
+        print("Shop-owner: damn, ")
+
+        gameList.remove(out_of_stock)
+        #remove the random generated value from the list
+
+        if theGame == out_of_stock:
+
+            print("Shop-owner: Unlucky! he is not gonna have " + theGame + " today!")
+        else:
+            print("Shop-owner: Thanks god. it is not " + theGame + " I should go to the POS now")
+
+    if theGame == out_of_stock:
+        print("Shop-owner: i am so sorry " + name + "!" + theGame + "has just sold out")
+        print("Shop-owner: This is our new item list: " + str(gameList))
+
+        theGame = input(str("Shop-owner: Which one do you need?\n"))
+#asking which game & storing the value
+
+    if theGame == "Shop-owner: delta force":
+        price = 3
+        print("It is 3$ for one")
+    elif theGame == "call of duty":
+        price = 3.50
+        print("Shop-owner: It is 3.50$ for one")
+    elif theGame == "angry birds":
+        price = 4
+        print("Shop-owner: It is 4$ for one")
+    elif theGame == "clash of clans":
+        price = 1.99
+        print("Shop-owner: It is 1.99$ for one")
+    elif theGame == "NFS":
+        price = 4.55
+        print("Shop-owner: It is 4.55$ for one")
+    else:
+        if isGolden == "no":
+            print("Shop-owner: Sorry, we don't have it here " + name)
+            print("okay then bye bye")
+            exit()
+        elif isGolden == "yes":
+            #adding the requesting video game to the game list because of the user is a golden member
+            gameList.append(theGame)
+            print("Shop-owner: here it's our new list!!" + str(gameList))
+            price = (random.randint(1,5))
+            print("Shop-owner: It is " + str(price) + " for one")
+
+    #user must select one of these choices & the prices will be changed according to the user's choice
+
+
 
 quantity = input("Shop-owner: Hey " + name + " i have got your " + theGame + " How many copies do you need bro?\n")
 #asking the quantity and storing the value
@@ -105,7 +162,7 @@ else:
 
         for i in range(rounds):
             
-            print("Shop-owner: This is the guessing game!!! \n you have to guess the number i have")
+            print("Shop-owner: This is the guessing game!!! you have to guess the number i have")
             print("You: great, i'll guess now.....\n")
 
             guess = (random.randint(0,9))
@@ -118,7 +175,6 @@ else:
                 print("Shop-owner: Bad luck yo.")
 
             print("Shop-owner: want to quit?\n")
-
             quit = str(input())
             if quit == "yes":
                 exit()
